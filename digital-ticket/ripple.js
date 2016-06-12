@@ -105,22 +105,24 @@ var ripple = function() {
                 }, false);
                 rippleButtons[i].addEventListener("touchmove", function(e) {
                     console.log('touchmove');
-                    if (e.target.hasAttribute("ripple-cancel-on-move")) {
-                        rippleRetrieve(e);
-                        return
-                    }
-                    try {
-                        overEl = document.elementFromPoint(e.touches[0].clientX, e.touches[0].clientY).className.indexOf("ripple") >= 0;
-                    } catch (err) {
-                        overEl = false;
-                    }
-                    if (!overEl) {
-                        rippleRetrieve(e);
-                    }
+
+                    rippleMove(e);
+                    //if (e.target.hasAttribute("ripple-cancel-on-move")) {
+                    //    rippleRetrieve(e);
+                    //    return
+                    //}
+                    //try {
+                    //    overEl = document.elementFromPoint(e.touches[0].clientX, e.touches[0].clientY).className.indexOf("ripple") >= 0;
+                    //} catch (err) {
+                    //    overEl = false;
+                    //}
+                    //if (!overEl) {
+                    //    rippleRetrieve(e);
+                    //}
                 }, false);
                 rippleButtons[i].addEventListener("touchend", function(e) {
                     console.log('touchend');
-                    rippleEnd(e);
+                    rippleFade(e);
                 }, false);
                 rippleButtons[i].addEventListener("mousedown", function(e) {
                     console.log('mousedown');
