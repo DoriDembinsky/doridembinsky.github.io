@@ -13,10 +13,12 @@
 			window.setTimeout(function() {
 				ripple.registerRipples();
 			}, 1000)
+
+			window.scrollTo(0,document.body.scrollHeight);
 		}
 
 		document.ontouchmove = function(event){
-//			event.preventDefault();
+			event.preventDefault();
 		}
 	</script>
 	<style>
