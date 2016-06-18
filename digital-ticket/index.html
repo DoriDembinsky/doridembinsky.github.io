@@ -76,31 +76,55 @@
 		}
 
 
-		.ripple-content{
+		.ripple-holder{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background: transparent;
+		}
+
+		.intro{
+			height: 100%;
+		}
+
+		.logo {
+
+		}
+
+		.touch {
+			color: grey;
+		}
+
+		.content{
 			flex-grow: 1;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 		}
-		/*.gradient {*/
-			/*background: rgba(239,64,54,1);*/
-			/*background: -moz-radial-gradient(center, ellipse cover, rgba(239,64,54,1) 0%, rgba(239,148,121,1) 12%, rgba(241,214,198,1) 33%, rgba(241,241,242,1) 93%, rgba(241,241,242,1) 100%);*/
-			/*background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(239,64,54,1)), color-stop(12%, rgba(239,148,121,1)), color-stop(33%, rgba(241,214,198,1)), color-stop(93%, rgba(241,241,242,1)), color-stop(100%, rgb(241, 241, 242)));*/
-			/*background: -webkit-radial-gradient(center, ellipse cover, rgba(239,64,54,1) 0%, rgba(239,148,121,1) 12%, rgba(241,214,198,1) 33%, rgba(241,241,242,1) 93%, rgba(241,241,242,1) 100%);*/
-			/*background: -o-radial-gradient(center, ellipse cover, rgba(239,64,54,1) 0%, rgba(239,148,121,1) 12%, rgba(241,214,198,1) 33%, rgba(241,241,242,1) 93%, rgba(241,241,242,1) 100%);*/
-			/*background: -ms-radial-gradient(center, ellipse cover, rgba(239,64,54,1) 0%, rgba(239,148,121,1) 12%, rgba(241,214,198,1) 33%, rgba(241,241,242,1) 93%, rgba(241,241,242,1) 100%);*/
-			/*background: radial-gradient(ellipse at center, rgba(239,64,54,1) 0%, rgba(239,148,121,1) 12%, rgba(241,214,198,1) 33%, rgba(241,241,242,1) 93%, rgba(241,241,242,1) 100%);*/
-			/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef4036', endColorstr='#f1f1f2', GradientType=1 );*/
-		/*}*/
-		/**/
 
+		.ripple-content {
+			visibility: hidden;
+			width: 0;
+			height: 0;
+		}
 	</style>
 	</head>
 	<body style="margin: 0px" align="center">
-		<div style="width: 100vw; height: 100vh;   display: flex; flex-direction: column; background: transparent;" class="ripple" ripple-opacity="1" ripple-color="radial-gradient(ellipse at center, rgba(239,64,54,1) 0%, rgba(239,148,121,1) 12%, rgba(241,214,198,0.8) 23%, rgba(255,255,255,0) 54%)" ripple-press-expand-time="2" align="center">
-		<!--<div style="width: 100vw; height: 100vh;   display: flex; flex-direction: column; background: transparent; display: table-cell; vertical-align: middle;" class="ripple" ripple-opacity="1" ripple-color="radial-gradient(ellipse at center, rgba(239,64,54,1) 0%, rgba(239,148,121,1) 12%, rgba(241,214,198,0.8) 23%, rgba(255,255,255,0) 54%)" ripple-press-expand-time="2" align="center">-->
-			<div class="ripple-content">
+
+		<div class="ripple ripple-holder"
+			 ripple-opacity="1"
+			 ripple-color="radial-gradient(ellipse at center, rgba(239,64,54,1) 0%, rgba(239,148,121,1) 12%, rgba(241,214,198,0.8) 23%, rgba(255,255,255,0) 54%)"
+			 ripple-press-expand-time="2"
+			 align="center">
+
+			<div class="content intro">
+				<div class="touch noSelect">
+					TOUCH TO DISCOVER
+				</div>
+			</div>
+			<div class="ripple-content content">
 				<div class="text">
 					1.6
 				</div>

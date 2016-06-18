@@ -9,11 +9,34 @@ var ripple = function() {
         ripple.registerRipples();
     });
 
+    var disableRipple = true;
+
+    function hideIntro(el) {
+        var intro = el.getElementsByClassName("intro")[0];
+        intro.style.transition = "opacity " + 0.5 + "s ease-in-out";
+        intro.style.opacity = 0;
+
+        intro.addEventListener("transitionend", function(e) {
+            disableRipple = false;
+            intro.style.width = 0;
+            intro.style.height = 0;
+            intro.remove();
+            var rippleContent = document.getElementsByClassName("ripple-content")[0];
+            rippleContent.style.visibility = 'visible';
+            rippleContent.style.width = '100%';
+            rippleContent.style.height = '100%';
+        });
+    }
+
     function rippleStart(e) {
         rippleContainer = getRippleContainer(e.target);
 
-
         console.log("Already animating: " + rippleContainer.getAttribute("animating"));
+
+        if (disableRipple) {
+            hideIntro(e.target);
+            return;
+        }
 
         if (rippleContainer.getAttribute("animating") == "3") {
             rippleContainer.style.scale = 0;
