@@ -11,7 +11,14 @@ var ripple = function() {
 
     function rippleStart(e) {
         rippleContainer = getRippleContainer(e.target);
-        if ((rippleContainer.getAttribute("animating") == "0" || !rippleContainer.hasAttribute("animating")) && e.target.className.indexOf("ripple") > -1) {
+
+
+        console.log("Already animating: " + rippleContainer.getAttribute("animating"));
+
+
+
+        //if ((rippleContainer.getAttribute("animating") == "0" || !rippleContainer.hasAttribute("animating")) && e.target.className.indexOf("ripple") > -1) {
+        if (e.target.className.indexOf("ripple") > -1) {
             rippleContainer.setAttribute("animating", "1");
             offsetX = typeof e.offsetX == "number" ? e.offsetX : e.touches[0].clientX - e.target.getBoundingClientRect().left;
             offsetY = typeof e.offsetY == "number" ? e.offsetY : e.touches[0].clientY - e.target.getBoundingClientRect().top;
@@ -24,7 +31,8 @@ var ripple = function() {
             rippleContainer.style.boxShadow = e.target.getAttribute("ripple-shadow") || "none";
             rippleContainer.style.top = offsetY + "px";
             rippleContainer.style.left = offsetX + "px";
-            rippleContainer.style.transform = "translate(-50%, -50%) scale(" + fullCoverRadius / 100 + ")";
+            //rippleContainer.style.transform = "translate(-50%, -50%) scale(" + fullCoverRadius / 100 + ")";
+            rippleContainer.style.transform = "translate(-50%, -50%) scale(" + 4 + ")";
         }
     }
 
@@ -53,6 +61,7 @@ var ripple = function() {
         if (rippleContainer.getAttribute("animating") == "1") {
             rippleContainer.setAttribute("animating", "3");
             collapseTime = e.target.getAttribute("ripple-leave-collapse-time") || .4;
+            rippleContainer.style.transform = "translate(-50%, -50%) scale(0)";
             rippleContainer.style.transition += ", opacity " + 0.4 + "s ease-in-out";
             rippleContainer.style.opacity = 0;
         }
