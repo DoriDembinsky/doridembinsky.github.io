@@ -57,7 +57,7 @@ var ripple = function() {
             rippleContainer.style.top = offsetY + "px";
             rippleContainer.style.left = offsetX + "px";
             //rippleContainer.style.transform = "translate(-50%, -50%) scale(" + fullCoverRadius / 100 + ")";
-            rippleContainer.style.transform = "translate(-50%, -50%) scale(" + 3 + ")";
+            rippleContainer.style.transform = "translate(-50%, -50%) scale(" + 5 + ")";
         }
     }
 
