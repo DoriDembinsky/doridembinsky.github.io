@@ -15,7 +15,9 @@ var ripple = function() {
 
         console.log("Already animating: " + rippleContainer.getAttribute("animating"));
 
-
+        if (rippleContainer.getAttribute("animating") == "3") {
+            rippleContainer.style.scale = 0;
+        }
 
         //if ((rippleContainer.getAttribute("animating") == "0" || !rippleContainer.hasAttribute("animating")) && e.target.className.indexOf("ripple") > -1) {
         if (e.target.className.indexOf("ripple") > -1) {
@@ -32,7 +34,7 @@ var ripple = function() {
             rippleContainer.style.top = offsetY + "px";
             rippleContainer.style.left = offsetX + "px";
             //rippleContainer.style.transform = "translate(-50%, -50%) scale(" + fullCoverRadius / 100 + ")";
-            rippleContainer.style.transform = "translate(-50%, -50%) scale(" + 4 + ")";
+            rippleContainer.style.transform = "translate(-50%, -50%) scale(" + 3 + ")";
         }
     }
 
@@ -60,9 +62,8 @@ var ripple = function() {
 
         if (rippleContainer.getAttribute("animating") == "1") {
             rippleContainer.setAttribute("animating", "3");
-            collapseTime = e.target.getAttribute("ripple-leave-collapse-time") || .4;
-            rippleContainer.style.transform = "translate(-50%, -50%) scale(0)";
-            rippleContainer.style.transition += ", opacity " + 0.4 + "s ease-in-out";
+            rippleContainer.style.transform = "translate(-50%, -50%) scale(0.3)";
+            rippleContainer.style.transition += ", opacity " + 0.6 + "s ease-in-out";
             rippleContainer.style.opacity = 0;
         }
     }
