@@ -10,6 +10,7 @@ var ripple = function() {
     });
 
     var disableRipple = true;
+    var timer = null;
 
     function hideIntro(el) {
         var intro = el.getElementsByClassName("intro")[0];
@@ -25,10 +26,34 @@ var ripple = function() {
             rippleContent.style.visibility = 'visible';
             rippleContent.style.width = '100%';
             rippleContent.style.height = '100%';
+
+            restartRefreshTimer();
         });
     }
 
+    function stopTimer() {
+
+        console.log("stopTimer");
+        if (timer) {
+            console.log("clear TIMER");
+            clearTimeout(timer);
+        }
+    }
+
+    function restartRefreshTimer() {
+
+        stopTimer();
+
+        console.log("set timer!");
+        timer = setTimeout(function() {
+            location.reload();
+        }, 30000);
+    }
+
     function rippleStart(e) {
+
+        stopTimer();
+
         rippleContainer = getRippleContainer(e.target);
 
         console.log("Already animating: " + rippleContainer.getAttribute("animating"));
@@ -57,7 +82,7 @@ var ripple = function() {
             rippleContainer.style.top = offsetY + "px";
             rippleContainer.style.left = offsetX + "px";
             //rippleContainer.style.transform = "translate(-50%, -50%) scale(" + fullCoverRadius / 100 + ")";
-            rippleContainer.style.transform = "translate(-50%, -50%) scale(" + 5 + ")";
+            rippleContainer.style.transform = "translate(-50%, -50%) scale(" + 7 + ")";
         }
     }
 
@@ -81,6 +106,9 @@ var ripple = function() {
     }
 
     function rippleFade(e) {
+
+        restartRefreshTimer();
+
         rippleContainer = getRippleContainer(e.target);
 
         if (rippleContainer.getAttribute("animating") == "1") {
