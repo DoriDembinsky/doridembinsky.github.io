@@ -49,12 +49,13 @@
 			src: url(FuturaT_Bold.ttf);
 		}
 
-		.text {
+		.hidden-text {
 			font-family: Futura;
 			/*font-weight: bold;*/
 			z-index: 100;
 			position: relative;
 			color: #FDFDFD;
+			/*color: #aaaaaa;*/
 			background: transparent;
 			font-size: 500%;
 			webkit-touch-callout: none;
@@ -71,7 +72,7 @@
 		}
 
 		.footer {
-			color: grey;
+			color: #CE4942;
 			display: flex;
 			z-index: 100;
 			justify-content: space-between;
@@ -80,7 +81,7 @@
 		}
 
 		.footer div {
-			color: grey;
+			color: #CE4942;
 		}
 
 
@@ -100,22 +101,38 @@
 
 		}
 
-		.touch {
-			color: grey;
+		.hidden-text {
+			position: absolute;
+			margin-left: auto;
+			margin-right: auto;
+			left: 0;
+			right: 0;
+			top: 30%;
 		}
 
-		.content{
-			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
+		.touch {
+			color: #CE4942;
+			position: absolute;
+			margin-left: auto;
+			margin-right: auto;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+			top: 50%;
 		}
+
+		/*.content{*/
+			/*flex-grow: 1;*/
+			/*display: flex;*/
+			/*flex-direction: column;*/
+			/*align-items: center;*/
+			/*justify-content: center;*/
+		/*}*/
 
 		.ripple-content {
-			visibility: hidden;
-			width: 0;
-			height: 0;
+			position: relative;
+			width: 100%;
+			height: 100%;
 		}
 	</style>
 	</head>
@@ -127,54 +144,34 @@
 			 ripple-press-expand-time="1"
 			 align="center">
 
-			<div class="content intro">
-				<div class="touch noSelect">
-					TOUCH TO DISCOVER
-				</div>
-			</div>
 			<div class="ripple-content content">
-				<div class="text">
-					1.6
+				<div class="touch noSelect intro">
+				TOUCH TO DISCOVER
 				</div>
 
-				<div class="text">
-					OBJECTS OF DESIRE
-				</div>
+				<div class="hidden-text">
+					<!--<div class="text">-->
+					<div>
+						1.6
+					</div>
 
-				<div class="author text">
-					JESSE J. MARTH
+					<!--<div class="text">-->
+					<div>
+						OBJECTS OF DESIRE
+					</div>
+
+					<!--<div class="author text">-->
+					<div class="author">
+						JESSE J. MARTH
+					</div>
 				</div>
 			</div>
 
 			<div class="footer noSelect">
 				<div>TICKET NUMBER</div>
-				<div style="color: grey; text-decoration: none;">31234674231</div>
+				<div style="text-decoration: none;">31234674231</div>
 				<div><img src="">QR CODE IMG</div>
 			</div>
 		</div>
-
-		<!--<div style="width: 90vw; height: 90vh; background: DarkSeaGreen" class="ripple margin" align="center">-->
-			<!--<h1 class="noSelect" style="color: white; font-size: 200%">Hold down to slowly expand the ripple</h1>-->
-		<!--</div>-->
-		<!--<div style="width: 90vw; height: 90vh; background: LimeGreen" class="ripple margin" align="center">-->
-			<!--<h1 class="noSelect" style="color: white; font-size: 200%">While pressing, move the pointer out of the container to cancel the ripple</h1>-->
-		<!--</div>-->
-		<!--<div style="width: 90vw; height: 33vh; background: coral" class="ripple margin" align="center" ripple-color="DarkMagenta" ripple-opacity="0.9">-->
-			<!--<h2 class="noSelect" style="color: white;">You can change the looks of the ripple</h2>-->
-		<!--</div>-->
-		<!--<div style="width: 90vw; height: 33vh; background: IndianRed" class="ripple margin" align="center" ripple-opacity="0.5" ripple-color="url('pattern.jpg')">-->
-			<!--<h2 class="noSelect" style="color: white;">You can even use a picture as background</h2>-->
-		<!--</div>-->
-		<!--<div style="width: 90vw; height: 33vh; background: Maroon" class="ripple margin" align="center" ripple-color="LemonChiffon" ripple-opacity="0.6" ripple-shadow="0px 0px 25px 10px rgba(51,51,51,0.77)">-->
-			<!--<h2 class="noSelect" style="color: white;">You can add a shadow to the ripple</h2>-->
-		<!--</div>-->
-		<!--<div style="width: 90vw; height: 33vh; background: Teal" class="ripple margin" align="center" ripple-color="Lime" ripple-opacity="0.3" ripple-press-expand-time="10" ripple-release-expand-time="3" ripple-leave-collapse-time="1.8">-->
-			<!--<h2 class="noSelect" style="color: white;">You can change the timing of the effect</h2>-->
-		<!--</div>-->
-		<!--<div id="eventDemo" style="width: 90vw; height: 33vh; background: RebeccaPurple" class="ripple margin" align="center" ripple-color="RoyalBlue" ripple-opacity="0.5">-->
-			<!--<h2 class="noSelect" style="color: white;">If clicked, the element fires an 'ripple-button-click' event</h2>-->
-		<!--</div>-->
-		<!--<h1 style="color: black; font-size: 200%; font-family: 'Comic Sans MS'">Like what you see? See you on <a href="https://github.com/SirBaaron/ripple-js/blob/master/README.md" target="_blank">Github</a>.</h1>-->
-		<!--<h1 style="color: black; font-size: 150%; font-family: 'Comic Sans MS'">Made by Aaron Längert</h1>-->
 	</body>
 </html>

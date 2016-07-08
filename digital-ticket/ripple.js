@@ -19,14 +19,7 @@ var ripple = function() {
 
         intro.addEventListener("transitionend", function(e) {
             disableRipple = false;
-            intro.style.width = 0;
-            intro.style.height = 0;
             intro.remove();
-            var rippleContent = document.getElementsByClassName("ripple-content")[0];
-            rippleContent.style.visibility = 'visible';
-            rippleContent.style.width = '100%';
-            rippleContent.style.height = '100%';
-
             restartRefreshTimer();
         });
     }
@@ -60,7 +53,6 @@ var ripple = function() {
 
         if (disableRipple) {
             hideIntro(e.target);
-            return;
         }
 
         if (rippleContainer.getAttribute("animating") == "3") {
