@@ -17,9 +17,14 @@ var ripple = function() {
         intro.style.transition = "opacity " + 0.5 + "s ease-in-out";
         intro.style.opacity = 0;
 
+        var hiddenText = document.getElementsByClassName("hidden-text")[0];
+        hiddenText.style.transition = "opacity " + 0.5 + "s ease-in-out";
+        hiddenText.style.opacity = 1;
+
         intro.addEventListener("transitionend", function(e) {
             disableRipple = false;
             intro.remove();
+
             restartRefreshTimer();
         });
     }
