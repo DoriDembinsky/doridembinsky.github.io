@@ -45,7 +45,7 @@ var ripple = function() {
         console.log("set timer!");
         timer = setTimeout(function() {
             location.reload();
-        }, 20000);
+        }, 15000);
     }
 
     function rippleStart(e) {
