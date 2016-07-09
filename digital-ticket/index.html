@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width = device-width, height = device-height, initial-scale = 1.0, user-scalable = yes">
 	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 
 		<title>OH!</title>
 	<script type="text/javascript" src="./ripple.js"></script>
@@ -56,13 +57,12 @@
 
 		.hidden-text {
 			font-family: Futura;
-			/*font-weight: bold;*/
+			font-weight: bold;
 			z-index: 100;
 			position: relative;
-			color: #FDFDFD;
-			/*color: #aaaaaa;*/
 			background: transparent;
 			font-size: 500%;
+
 			webkit-touch-callout: none;
 			-webkit-user-select: none;
 			-khtml-user-select: none;
@@ -70,6 +70,16 @@
 			-ms-user-select: none;
 			user-select: none;
 			cursor: default;
+
+			opacity: 0;
+			position: absolute;
+			margin-left: auto;
+			margin-right: auto;
+			/*color: white;*/
+			color: green;
+			left: 0;
+			right: 0;
+			top: 30%;
 		}
 
 		.author {
@@ -105,17 +115,6 @@
 
 		.logo {
 
-		}
-
-		.hidden-text {
-			opacity: 0;
-			position: absolute;
-			margin-left: auto;
-			margin-right: auto;
-			color: white;
-			left: 0;
-			right: 0;
-			top: 30%;
 		}
 
 		.touch {
@@ -157,7 +156,7 @@
 
 			<div class="ripple-content content">
 				<div class="touch noSelect intro">
-				Touch To Discover
+				Touch to discover
 				</div>
 
 				<div class="hidden-text">
@@ -167,6 +166,7 @@
 					</div>
 
 					<!--<div class="text">-->
+
 					<div>
 						OBJECTS OF DESIRE
 					</div>
@@ -179,9 +179,9 @@
 			</div>
 
 			<div class="footer noSelect">
-				<div>TICKET NUMBER</div>
+				<div>REGULAR TICKET</div>
 				<div style="text-decoration: none;">31234674231</div>
-				<div><img src="">QR CODE IMG</div>
+				<div>149.99₪</div>
 			</div>
 		</div>
 	</body>
